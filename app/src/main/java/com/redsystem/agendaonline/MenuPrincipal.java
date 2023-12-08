@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.app.Dialog;
@@ -33,9 +34,11 @@ import com.redsystem.agendaonline.Perfil.Perfil_Usuario;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    Button AgregarNotas, ListarNotas, Importantes,Perfil,AcercaDe,CerrarSesion;
+    Button AgregarNotas, ListarNotas, Importantes,Contactos,AcercaDe,CerrarSesion;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
+
+    AppCompatImageView appCompatImageView;
 
     TextView UidPrincipal, NombresPrincipal, CorreoPrincipal;
     Button EstadoCuentaPrincipal;
@@ -76,9 +79,11 @@ public class MenuPrincipal extends AppCompatActivity {
         AgregarNotas = findViewById(R.id.AgregarNotas);
         ListarNotas = findViewById(R.id.ListarNotas);
         Importantes = findViewById(R.id.Importantes);
-        Perfil = findViewById(R.id.Perfil);
+        Contactos = findViewById(R.id.Perfil);
         AcercaDe = findViewById(R.id.AcercaDe);
         CerrarSesion = findViewById(R.id.CerrarSesion);
+
+        appCompatImageView = findViewById(R.id.imageProfile);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -96,6 +101,10 @@ public class MenuPrincipal extends AppCompatActivity {
                     VerificarCuentaCorreo();
                 }
             }
+        });
+
+        appCompatImageView.setOnClickListener(v -> {
+            startActivity(new Intent(MenuPrincipal.this, Perfil_Usuario.class));
         });
 
         AgregarNotas.setOnClickListener(new View.OnClickListener() {
@@ -131,11 +140,10 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
-        Perfil.setOnClickListener(new View.OnClickListener() {
+        Contactos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuPrincipal.this, Perfil_Usuario.class));
-                Toast.makeText(MenuPrincipal.this, "Perfil Usuario", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MenuPrincipal.this, "Contactos", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -277,7 +285,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     AgregarNotas.setEnabled(true);
                     ListarNotas.setEnabled(true);
                     Importantes.setEnabled(true);
-                    Perfil.setEnabled(true);
+                    Contactos.setEnabled(true);
                     AcercaDe.setEnabled(true);
                     CerrarSesion.setEnabled(true);
 

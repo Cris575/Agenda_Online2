@@ -33,7 +33,7 @@
     <string name="AgregarNotas">Agregar</string>
     <string name="ListarNotas">Mis Notas</string>
     <string name="Importantes">Importantes</string>
-    <string name="Perfil">Perfil</string>
+    <string name="Contactos">Contactos</string>
     <string name="AcercaDe">Acerca De</string>
     <string name="CerrarSesion">Salir</string>
 
@@ -123,5 +123,18 @@
     <string name="Estado_Detalle_TXT">Estado de la nota: </string>
     <string name="Estado_Detalle">Estado</string>
     <string name="Boton_Importante">Importante</string>
+
+    <!--PERFIL DEL USUARIO-->
+    <string name="Uid_Perfil">Uid</string>
+    <string name="Nombres_Perfil">Mis nombres</string>
+    <string name="Apellidos_Perfil">Mis apellidos</string>
+    <string name="Correo_Perfil">Correo</string>
+    <string name="Edad_Perfil">Edad</string>
+    <string name="Telefono_Perfil">Teléfono</string>
+    <string name="Domicilio_Perfil">Domicilio</string>
+    <string name="Universidad_Perfil">Universidad</string>
+    <string name="Profesion_Perfil">Profesión</string>
+    <string name="Guardar_Datos">Guardar datos</string>
+
 
 </resources>
