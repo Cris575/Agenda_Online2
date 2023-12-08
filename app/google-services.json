@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "718139514247",
+    "firebase_url": "https://notas-39dba-default-rtdb.firebaseio.com",
+    "project_id": "notas-39dba",
+    "storage_bucket": "notas-39dba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718139514247:android:ec7e289e676ced1a554722",
+        "android_client_info": {
+          "package_name": "com.redsystem.agendaonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoPkRZs00nLvRlUytFi6XogP52hiOizJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
