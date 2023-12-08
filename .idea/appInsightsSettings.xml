@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.redsystem.agendaonline" />
-                  <option name="mobileSdkAppId" value="1:355220797098:android:a46cb9ce88b5a57cbf02d3" />
-                  <option name="projectId" value="agenda-app-1b2a9" />
-                  <option name="projectNumber" value="355220797098" />
+                  <option name="mobileSdkAppId" value="1:718139514247:android:ec7e289e676ced1a554722" />
+                  <option name="projectId" value="notas-39dba" />
+                  <option name="projectNumber" value="718139514247" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -17,7 +17,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="#5499c7"
             app:cardUseCompatPadding="true"
             android:padding="0.2dp"
             app:cardCornerRadius="5dp">
@@ -34,7 +34,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginStart="2dp"
-                    android:src="@drawable/imagen_perfil"/>
+                    android:src="@drawable/imagen_perfil_usuario"/>
 
                 <!--DATOS-->
                 <androidx.appcompat.widget.LinearLayoutCompat
