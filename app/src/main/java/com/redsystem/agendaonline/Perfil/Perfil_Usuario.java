@@ -1,9 +1,5 @@
 package com.redsystem.agendaonline.Perfil;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -19,8 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.redsystem.agendaonline.MenuPrincipal;
 import com.redsystem.agendaonline.R;
+
+import java.util.HashMap;
 
 public class Perfil_Usuario extends AppCompatActivity {
 
@@ -41,7 +44,17 @@ public class Perfil_Usuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
 
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Perfil de usuario");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
         InicializarVariables();
+
+        Guardar_Datos.setOnClickListener(v -> {
+            ActualizarDatos();
+        });
+
     }
 
     private void InicializarVariables(){
@@ -103,9 +116,37 @@ public class Perfil_Usuario extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Perfil_Usuario.this, ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Perfil_Usuario.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void ActualizarDatos() {
+        String A_Nombre = Nombres_Perfil.getText().toString().trim();
+        String A_Apellidos = Apellidos_Perfil.getText().toString().trim();
+        String A_Telefono = Telefono_Perfil.getText().toString().trim();
+        String A_Domicilio = Domicilio_Perfil.getText().toString();
+
+        HashMap<String, Object> Datos_Actualizar = new HashMap<>();
+
+        Datos_Actualizar.put("nombres", A_Nombre);
+        Datos_Actualizar.put("apellidos", A_Apellidos);
+        Datos_Actualizar.put("telefono", A_Telefono);
+        Datos_Actualizar.put("domicilio", A_Domicilio);
+
+        Usuarios.child(user.getUid()).updateChildren(Datos_Actualizar)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Perfil_Usuario.this, "Actualizado Correctamente", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Perfil_Usuario.this, "" + e, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     private void Cargar_Imagen(String imagenPerfil) {
@@ -113,10 +154,15 @@ public class Perfil_Usuario extends AppCompatActivity {
             //Cuando la imagen ha sido traida exitosamente desde Firebase
             Glide.with(getApplicationContext()).load(imagenPerfil).placeholder(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             //Si la imagen no fue traida con éxito
             Glide.with(getApplicationContext()).load(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
         }
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 }
