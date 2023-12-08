@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -79,6 +80,7 @@ public class Perfil_Usuario extends AppCompatActivity {
                     String domicilio = ""+snapshot.child("domicilio").getValue();
                     String universidad = ""+snapshot.child("universidad").getValue();
                     String profesion = ""+snapshot.child("profesion").getValue();
+                    String imagen_perfil = ""+snapshot.child("imagen_perfil").getValue();
 
                     //Seteo de datos
                     Uid_Perfil.setText(uid);
@@ -91,6 +93,8 @@ public class Perfil_Usuario extends AppCompatActivity {
                     Universidad_Perfil.setText(universidad);
                     Profesion_Perfil.setText(profesion);
 
+                    Cargar_Imagen(imagen_perfil);
+
                 }
                 else {
                     Toast.makeText(Perfil_Usuario.this, "Esperando datos", Toast.LENGTH_SHORT).show();
@@ -102,6 +106,17 @@ public class Perfil_Usuario extends AppCompatActivity {
                 Toast.makeText(Perfil_Usuario.this, ""+error, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void Cargar_Imagen(String imagenPerfil) {
+        try {
+            //Cuando la imagen ha sido traida exitosamente desde Firebase
+            Glide.with(getApplicationContext()).load(imagenPerfil).placeholder(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
+
+        }catch (Exception e){
+            //Si la imagen no fue traida con éxito
+            Glide.with(getApplicationContext()).load(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
+        }
     }
 
 }
