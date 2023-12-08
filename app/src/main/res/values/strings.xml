@@ -126,8 +126,8 @@
 
     <!--PERFIL DEL USUARIO-->
     <string name="Uid_Perfil">Uid</string>
-    <string name="Nombres_Perfil">Mis nombres</string>
-    <string name="Apellidos_Perfil">Mis apellidos</string>
+    <string name="Nombres_Perfil">Nombre</string>
+    <string name="Apellidos_Perfil">Apellidos</string>
     <string name="Correo_Perfil">Correo</string>
     <string name="Edad_Perfil">Edad</string>
     <string name="Telefono_Perfil">Teléfono</string>

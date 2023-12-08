@@ -27,6 +27,7 @@
 
             <!--Imagen de perfil-->
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Imagen_Perfil"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:background="#354f60"
@@ -58,6 +59,7 @@
 
             <!--Uid-->
             <TextView
+                android:visibility="gone"
                 android:id="@+id/Uid_Perfil"
                 android:text="@string/Uid_Perfil"
                 android:layout_gravity="center"
@@ -86,7 +88,7 @@
                 android:inputType="textPersonName"
                 android:fontFamily="@font/worksans"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <!--Edad-->
             <EditText
@@ -95,7 +97,8 @@
                 android:inputType="number"
                 android:fontFamily="@font/worksans"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
 
             <!--Teléfono-->
             <EditText
@@ -122,7 +125,8 @@
                 android:inputType="text"
                 android:fontFamily="@font/worksans"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
 
             <!--Profesión-->
             <EditText
@@ -131,7 +135,8 @@
                 android:inputType="text"
                 android:fontFamily="@font/worksans"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
 
             <!--Guardar datos-->
             <Button
