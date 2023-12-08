@@ -1,9 +1,5 @@
 package com.redsystem.agendaonline.AgregarNota;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -16,6 +12,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,9 +30,9 @@ public class Agregar_Nota extends AppCompatActivity {
 
     TextView Uid_Usuario, Correo_usuario, Fecha_hora_actual, Fecha, Estado;
     EditText Titulo, Descripcion;
-    Button Btn_Calendario;
+    Button Btn_Calendario, Btn_guardar;
 
-    int dia, mes , anio;
+    int dia, mes, anio;
 
     DatabaseReference BD_Firebase;
 
@@ -42,7 +42,7 @@ public class Agregar_Nota extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_nota);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        actionBar.setTitle("Agregar Nota");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -96,6 +96,9 @@ public class Agregar_Nota extends AppCompatActivity {
 
             }
         });
+        Btn_guardar.setOnClickListener(v -> {
+            Agregar_Nota();
+        });
     }
 
     private void InicializarVariables(){
@@ -110,6 +113,10 @@ public class Agregar_Nota extends AppCompatActivity {
         Btn_Calendario = findViewById(R.id.Btn_Calendario);
 
         BD_Firebase = FirebaseDatabase.getInstance().getReference();
+
+        Btn_guardar = findViewById(R.id.button1);
+
+
     }
 
 
@@ -170,20 +177,6 @@ public class Agregar_Nota extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_agregar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.Agregar_Nota_BD) {
-            Agregar_Nota();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public boolean onSupportNavigateUp() {
