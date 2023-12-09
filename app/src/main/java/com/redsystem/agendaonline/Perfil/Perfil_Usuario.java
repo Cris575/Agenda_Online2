@@ -1,5 +1,6 @@
 package com.redsystem.agendaonline.Perfil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ import java.util.HashMap;
 
 public class Perfil_Usuario extends AppCompatActivity {
 
-    ImageView Imagen_Perfil;
+    ImageView Imagen_Perfil, Editar_imagen;
     TextView Correo_Perfil, Uid_Perfil;
     EditText Nombres_Perfil, Apellidos_Perfil, Edad_Perfil,
             Telefono_Perfil, Domicilio_Perfil, Universidad_Perfil,
@@ -55,6 +56,10 @@ public class Perfil_Usuario extends AppCompatActivity {
             ActualizarDatos();
         });
 
+        Editar_imagen.setOnClickListener(v -> {
+            startActivity(new Intent(Perfil_Usuario.this, Editar_imagen_perfil.class));
+        });
+
     }
 
     private void InicializarVariables(){
@@ -69,6 +74,7 @@ public class Perfil_Usuario extends AppCompatActivity {
         Universidad_Perfil = findViewById(R.id.Universidad_Perfil);
         Profesion_Perfil = findViewById(R.id.Profesion_Perfil);
 
+        Editar_imagen = findViewById(R.id.Editar_imagen);
         Guardar_Datos = findViewById(R.id.Guardar_Datos);
 
         firebaseAuth = FirebaseAuth.getInstance();

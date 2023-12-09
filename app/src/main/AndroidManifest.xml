@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgendaOnline">
         <activity
+            android:name=".Perfil.Editar_imagen_perfil"
+            android:exported="false" />
+        <activity
             android:name=".Detalle.Detalle_Nota"
             android:exported="false" />
         <activity android:name=".ActualizarNota.Actualizar_Nota" />

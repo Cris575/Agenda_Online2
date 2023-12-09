@@ -36,6 +36,14 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/imagen_perfil_usuario"/>
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Editar_imagen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/editar_imagen_perfil"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="230dp"/>
+
         </RelativeLayout>
 
         <!--Datos del usuario-->

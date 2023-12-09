@@ -136,5 +136,9 @@
     <string name="Profesion_Perfil">Profesión</string>
     <string name="Guardar_Datos">Guardar datos</string>
 
+    <!--Perfil del usuario-->
+    <string name="BtnElegirImagenDe">Elegir imagen de</string>
+    <string name="BtnActulizarImagen">Actualizar imagen</string>
+
 
 </resources>
