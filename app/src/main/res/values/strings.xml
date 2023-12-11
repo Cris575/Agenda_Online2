@@ -73,6 +73,15 @@
     <string name="Fecha_Item_I"> 00/00/0000 </string>
     <string name="Estado_Item_I"> No finalizado</string>
 
+    <!--ITEM CONTACTO-->
+    <string name="Id_c_Item">Id contacto</string>
+    <string name="Uid_c_Item">Uid usuario</string>
+    <string name="nombres_c_Item">Nombres</string>
+    <string name="apellidos_c_Item">Apellidos</string>
+    <string name="correo_c_Item">Correo</string>
+    <string name="telefono_c_Item">Teléfono</string>
+    <string name="direccion_c_Item">Dirección</string>
+
     <!--CUADRO DE DIALOGO OPCIONES-->
     <string name="ElijaOpcionTXT">Elija una opción</string>
     <string name="CD_Eliminar">Eliminar</string>
@@ -86,6 +95,17 @@
     <string name="EliminarNotaImportanteTXT">¿Desea eliminar ésta nota importante de la lista?</string>
     <string name="EliminarNota">Eliminar</string>
     <string name="EliminarNotaCancelar">Cancelar</string>
+
+    <!--CUADRO DE DIALOGO - ELGIR IMAGEN DE-->
+    <string name="ElegirImagenTXT">Eligir imagen de:</string>
+    <string name="Btn_Elegir_Galeria">Galeria</string>
+    <string name="Btn_Elegir_Camara">Cámara</string>
+
+    <!--CUADRO DE DIALOGO - OPCIONES PARA EL CONTACTO-->
+    <string name="ElegirOpcionContactoTXT">Seleccione una opción para el contacto</string>
+    <string name="Btn_Eliminar_C">Eliminar</string>
+    <string name="Btn_Actualzar_C">Actualizar</string>
+
 
     <!--ACTUALIZAR NOTA-->
     <string name="Id_nota_A">Id nota</string>
@@ -139,6 +159,50 @@
     <!--Perfil del usuario-->
     <string name="BtnElegirImagenDe">Elegir imagen de</string>
     <string name="BtnActulizarImagen">Actualizar imagen</string>
+
+    <!--Agregar contacto-->
+    <string name="Uid_Usuario_C">Mi uid</string>
+    <string name="Nombres_C">Nombres contacto</string>
+    <string name="Apellidos_C">Apellidos contacto</string>
+    <string name="Correo_C">Correo electrónico</string>
+    <string name="Telefono_C">Teléfono</string>
+    <string name="Direccion_C">Dirección</string>
+    <string name="Btn_Guardar_Contacto">Guardar contacto</string>
+
+    <!--Cuadro de dialogo - validar registro de contacto-->
+    <string name="ValidatTXT">Por favor complete al menos el campo nombre del contacto</string>
+    <string name="Btn_Validar_registro_C">Entendido</string>
+    <string name="todo">TODO</string>
+
+    <!--DETALLE CONTACTO-->
+    <string name="DetalleContactoTXT">Detalle Del Contacto</string>
+    <string name="Id_C_D"> -- </string>
+    <string name="Uid_Usuario_D"> -- </string>
+    <string name="Nombre_C_D"> -- </string>
+    <string name="Apellidos_C_D"> -- </string>
+    <string name="Correo_C_D"> -- </string>
+    <string name="Telefono_C_D"> -- </string>
+    <string name="Direccion_C_D"> -- </string>
+    <string name="Btn_Actualizar_C"> -- </string>
+    <string name="Llamar_C">Llamar</string>
+    <string name="Mensje_C">Mensaje</string>
+
+    <!--ACTUALIZAR CONTACTO-->
+    <string name="Id_C_A"> -- </string>
+    <string name="Uid_C_A"> -- </string>
+    <string name="Nombres_C_A"> -- </string>
+    <string name="Apellidos_C_A"> -- </string>
+    <string name="Correo_C_A"> -- </string>
+    <string name="Telefono_C_A"> -- </string>
+    <string name="Direccion_C_A"> -- </string>
+    <string name="Btn_Actualizar_C_A">Actualizar</string>
+
+    <!--INFORMACIÓN DE APLICACION-->
+    <string name="Desarrollador">Desarrollado por: Crsitian Gonzalez Herrera</string>
+    <string name="CorreoSoporte">Soporte: cg691539@gmail.com</string>
+    <string name="Version">Versión: 0.1</string>
+    <string name="EntenidoInfo">Entendido</string>
+
 
 
 </resources>

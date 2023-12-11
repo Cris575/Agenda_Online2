@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
 
     EditText CorreoLogin, PassLogin;
     Button Btn_Logeo;
-    TextView UsuarioNuevoTXT;
+    TextView UsuarioNuevoTXT, cambioContrasena;
 
     ProgressDialog progressDialog;
 
@@ -49,6 +49,11 @@ public class Login extends AppCompatActivity {
         PassLogin = findViewById(R.id.PassLogin);
         Btn_Logeo = findViewById(R.id.Btn_Logeo);
         UsuarioNuevoTXT = findViewById(R.id.UsuarioNuevoTXT);
+        cambioContrasena = findViewById(R.id.CambioContraseña);
+
+        cambioContrasena.setOnClickListener(v -> {
+            startActivity(new Intent(Login.this, recuperar_contrasena.class));
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
 

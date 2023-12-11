@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.redsystem.agendaonline.AgregarNota.Agregar_Nota;
+import com.redsystem.agendaonline.Contacto.Listar_Contactos;
 import com.redsystem.agendaonline.ListarNotas.Listar_Notas;
 import com.redsystem.agendaonline.NotasImportantes.Notas_Importantes;
 import com.redsystem.agendaonline.Perfil.Perfil_Usuario;
@@ -48,7 +49,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
     DatabaseReference Usuarios;
 
-    Dialog dialog_cuenta_verificada;
+
+    Dialog dialog_cuenta_verificada, dialog_informacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class MenuPrincipal extends AppCompatActivity {
         progressBarDatos = findViewById(R.id.progressBarDatos);
 
         dialog_cuenta_verificada = new Dialog(this);
+        dialog_informacion = new Dialog(this);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Espere por favor ...");
@@ -107,6 +110,7 @@ public class MenuPrincipal extends AppCompatActivity {
             startActivity(new Intent(MenuPrincipal.this, Perfil_Usuario.class));
         });
 
+
         AgregarNotas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,17 +144,19 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
-        Contactos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MenuPrincipal.this, "Contactos", Toast.LENGTH_SHORT).show();
-            }
+        Contactos.setOnClickListener(v -> {
+            //Obteneindo el dato uid del usuario
+            String uid_usuario = UidPrincipal.getText().toString();
+            Intent intent = new Intent(MenuPrincipal.this, Listar_Contactos.class);
+            //Enviamos el dato a la siguiente actividad
+            intent.putExtra("Uid", uid_usuario);
+            startActivity(intent);
         });
 
         AcercaDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuPrincipal.this, "Acerca De", Toast.LENGTH_SHORT).show();
+                Infomacion();
             }
         });
 
@@ -162,6 +168,20 @@ public class MenuPrincipal extends AppCompatActivity {
         });
     }
 
+    private void Infomacion(){
+        Button EntenidoInfo;
+
+        dialog_informacion.setContentView(R.layout.cuandro_dialogo_informacion);
+
+        EntenidoInfo = dialog_informacion.findViewById(R.id.EntenidoInfo);
+
+        EntenidoInfo.setOnClickListener(v ->{
+            dialog_informacion.dismiss();
+        });
+
+        dialog_informacion.show();
+        dialog_informacion.setCanceledOnTouchOutside(false);
+    }
     private void VerificarCuentaCorreo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("verificar cuenta")

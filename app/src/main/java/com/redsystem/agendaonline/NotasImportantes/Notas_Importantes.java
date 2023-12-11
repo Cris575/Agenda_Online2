@@ -1,13 +1,11 @@
 package com.redsystem.agendaonline.NotasImportantes;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,14 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.redsystem.agendaonline.ActualizarNota.Actualizar_Nota;
-import com.redsystem.agendaonline.Detalle.Detalle_Nota;
-import com.redsystem.agendaonline.ListarNotas.Listar_Notas;
-import com.redsystem.agendaonline.NotasArchivadas.Notas_Archivadas;
 import com.redsystem.agendaonline.Objetos.Nota;
 import com.redsystem.agendaonline.R;
-import com.redsystem.agendaonline.ViewHolder.ViewHolder_Nota;
 import com.redsystem.agendaonline.ViewHolder.ViewHolder_Nota_Importante;
 
 import org.jetbrains.annotations.NotNull;
@@ -117,7 +109,7 @@ public class Notas_Importantes extends AppCompatActivity {
                         Button EliminarNota, EliminarNotaCancelar;
 
                         //Realizamos la conexion con el diseño
-                        dialog.setContentView(R.layout.cuadro_dialogo_eliminar_nora_importante);
+                        dialog.setContentView(R.layout.cuadro_dialogo_eliminar_nota_importante);
 
                         //Inicializar las vistas
                         EliminarNota = dialog.findViewById(R.id.EliminarNota);

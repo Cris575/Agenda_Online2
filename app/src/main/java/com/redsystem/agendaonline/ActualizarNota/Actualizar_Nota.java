@@ -51,6 +51,7 @@ public class Actualizar_Nota extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_actualizar_nota);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Actualizar nota");
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
